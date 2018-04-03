@@ -78,14 +78,70 @@
 		F172224920728C310084C3EC /* GoldenFish */ = {
 			isa = PBXGroup;
 			children = (
-				F172224A20728C310084C3EC /* AppDelegate.swift */,
-				F172224C20728C310084C3EC /* ViewController.swift */,
-				F172224E20728C320084C3EC /* Main.storyboard */,
+				F1AF78342073D6120055E297 /* Helpers */,
+				F1AF78332073D60C0055E297 /* Macros */,
+				F1AF78322073D6010055E297 /* Delegates */,
+				F1AF78312073D5F20055E297 /* Controllers */,
+				F1AF78302073D5EB0055E297 /* Views */,
+				F1AF782F2073D5E30055E297 /* Models */,
 				F172225120728C350084C3EC /* Assets.xcassets */,
-				F172225320728C350084C3EC /* LaunchScreen.storyboard */,
 				F172225620728C350084C3EC /* Info.plist */,
 			);
 			path = GoldenFish;
+			sourceTree = "<group>";
+		};
+		F1AF782F2073D5E30055E297 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F1AF78302073D5EB0055E297 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1AF78352073D62F0055E297 /* Cells */,
+				F172224E20728C320084C3EC /* Main.storyboard */,
+				F172225320728C350084C3EC /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F1AF78312073D5F20055E297 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F172224C20728C310084C3EC /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F1AF78322073D6010055E297 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				F172224A20728C310084C3EC /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		F1AF78332073D60C0055E297 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Macros;
+			sourceTree = "<group>";
+		};
+		F1AF78342073D6120055E297 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F1AF78352073D62F0055E297 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,7 +425,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EH966UUX4K;
 				INFOPLIST_FILE = GoldenFish/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.garyguan.GoldenFish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -385,7 +444,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EH966UUX4K;
 				INFOPLIST_FILE = GoldenFish/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.garyguan.GoldenFish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
