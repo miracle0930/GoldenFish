@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		A170E3F74DBCFE08B4CF53AC /* Pods_GoldenFish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CF39668B7DAF0A818E8A6F /* Pods_GoldenFish.framework */; };
 		F172224B20728C310084C3EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F172224A20728C310084C3EC /* AppDelegate.swift */; };
-		F172224D20728C310084C3EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F172224C20728C310084C3EC /* ViewController.swift */; };
 		F172225020728C320084C3EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F172224E20728C320084C3EC /* Main.storyboard */; };
 		F172225220728C350084C3EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F172225120728C350084C3EC /* Assets.xcassets */; };
 		F172225520728C350084C3EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F172225320728C350084C3EC /* LaunchScreen.storyboard */; };
+		F1AF783A2073DF8E0055E297 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF78392073DF8E0055E297 /* MainViewController.swift */; };
+		F1AF783C20740C1B0055E297 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF783B20740C1B0055E297 /* Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +21,12 @@
 		E817F221DBC0A2FDA355787B /* Pods-GoldenFish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldenFish.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoldenFish/Pods-GoldenFish.release.xcconfig"; sourceTree = "<group>"; };
 		F172224720728C310084C3EC /* GoldenFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F172224A20728C310084C3EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F172224C20728C310084C3EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F172224F20728C320084C3EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F172225120728C350084C3EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F172225420728C350084C3EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F172225620728C350084C3EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1AF78392073DF8E0055E297 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F1AF783B20740C1B0055E297 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		F4207AB2B72A54FB2125115B /* Pods-GoldenFish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldenFish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoldenFish/Pods-GoldenFish.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +112,7 @@
 		F1AF78312073D5F20055E297 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F172224C20728C310084C3EC /* ViewController.swift */,
+				F1AF78392073DF8E0055E297 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -126,6 +128,7 @@
 		F1AF78332073D60C0055E297 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
+				F1AF783B20740C1B0055E297 /* Util.swift */,
 			);
 			path = Macros;
 			sourceTree = "<group>";
@@ -276,7 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F172224D20728C310084C3EC /* ViewController.swift in Sources */,
+				F1AF783A2073DF8E0055E297 /* MainViewController.swift in Sources */,
+				F1AF783C20740C1B0055E297 /* Util.swift in Sources */,
 				F172224B20728C310084C3EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +429,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EH966UUX4K;
 				INFOPLIST_FILE = GoldenFish/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,7 +437,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.garyguan.GoldenFish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -444,6 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EH966UUX4K;
 				INFOPLIST_FILE = GoldenFish/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,7 +457,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.garyguan.GoldenFish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

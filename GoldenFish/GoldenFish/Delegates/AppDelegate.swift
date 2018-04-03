@@ -12,12 +12,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var launchScreenImageView: UIImageView!
+    var coverView: UIView!
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        performAnimation()
+        
         return true
     }
+    
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -39,6 +45,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    private func performAnimation() {
+        window?.makeKeyAndVisible()
+        let screenWidth = UIScreen.main.bounds.width
+        let screenHeight = UIScreen.main.bounds.height
+        var imageWidth: CGFloat = 0.0
+        var imageHeight: CGFloat = 0.0
+        let launchScreenFrame = CGRect(x: (screenWidth - imageWidth) / 2, y: (screenHeight - imageHeight) / 2, width: imageWidth, height: imageHeight)
+        launchScreenImageView = UIImageView(frame: launchScreenFrame)
+        launchScreenImageView.image = UIImage(named: "Fish")!
+        window?.addSubview(launchScreenImageView)
+        UIView.transition(with: launchScreenImageView, duration: 1, options: UIViewAnimationOptions.transitionCrossDissolve, animations: {
+            imageWidth = 200
+            imageHeight = 200
+            self.launchScreenImageView.frame = CGRect(x: (screenWidth - imageWidth) / 2, y: (screenHeight - imageHeight) / 2, width: imageWidth, height: imageHeight)
+        }) { (_) in
+            UIView.transition(with: self.launchScreenImageView, duration: 1, options: UIViewAnimationOptions.transitionCrossDissolve, animations: {
+                imageWidth = 0
+                imageHeight = 0
+                self.launchScreenImageView.frame = CGRect(x: (screenWidth - imageWidth) / 2, y: (screenHeight - imageHeight) / 2, width: imageWidth, height: imageHeight)
+            }, completion: { (_) in
+                self.launchScreenImageView.removeFromSuperview()
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "hideCoverView"), object: nil)
+            })
+        }
     }
 
 
