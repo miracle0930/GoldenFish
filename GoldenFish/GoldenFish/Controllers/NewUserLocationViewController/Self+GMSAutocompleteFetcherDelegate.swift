@@ -9,7 +9,7 @@
 import UIKit
 import GooglePlaces
 
-extension NewUserLocationViewController: GMSAutocompleteViewControllerDelegate {
+extension NewUserLocationViewController: GMSAutocompleteFetcherDelegate {
     
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         

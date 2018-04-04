@@ -15,7 +15,7 @@
 		F1AF783A2073DF8E0055E297 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF78392073DF8E0055E297 /* NewUserViewController.swift */; };
 		F1AF783C20740C1B0055E297 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF783B20740C1B0055E297 /* Util.swift */; };
 		F1AF783E207422490055E297 /* NewUserSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF783D207422490055E297 /* NewUserSignUpViewController.swift */; };
-		F1D011F020746B1F00C4927D /* Self+GMSAutocompleteViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D011EF20746B1F00C4927D /* Self+GMSAutocompleteViewControllerDelegate.swift */; };
+		F1D011F020746B1F00C4927D /* Self+GMSAutocompleteFetcherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D011EF20746B1F00C4927D /* Self+GMSAutocompleteFetcherDelegate.swift */; };
 		F1D011F320746FA600C4927D /* Self+GMSMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D011F220746FA600C4927D /* Self+GMSMapViewDelegate.swift */; };
 		F1D011F520746FF500C4927D /* Self+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D011F420746FF500C4927D /* Self+CLLocationManagerDelegate.swift */; };
 		F1F7F68C20744FBF00490052 /* NewUserLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7F68B20744FBF00490052 /* NewUserLocationViewController.swift */; };
@@ -33,7 +33,7 @@
 		F1AF78392073DF8E0055E297 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		F1AF783B20740C1B0055E297 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		F1AF783D207422490055E297 /* NewUserSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserSignUpViewController.swift; sourceTree = "<group>"; };
-		F1D011EF20746B1F00C4927D /* Self+GMSAutocompleteViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Self+GMSAutocompleteViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		F1D011EF20746B1F00C4927D /* Self+GMSAutocompleteFetcherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Self+GMSAutocompleteFetcherDelegate.swift"; sourceTree = "<group>"; };
 		F1D011F220746FA600C4927D /* Self+GMSMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Self+GMSMapViewDelegate.swift"; sourceTree = "<group>"; };
 		F1D011F420746FF500C4927D /* Self+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Self+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
 		F1F7F68B20744FBF00490052 /* NewUserLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserLocationViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				F1F7F68B20744FBF00490052 /* NewUserLocationViewController.swift */,
-				F1D011EF20746B1F00C4927D /* Self+GMSAutocompleteViewControllerDelegate.swift */,
+				F1D011EF20746B1F00C4927D /* Self+GMSAutocompleteFetcherDelegate.swift */,
 				F1D011F220746FA600C4927D /* Self+GMSMapViewDelegate.swift */,
 				F1D011F420746FF500C4927D /* Self+CLLocationManagerDelegate.swift */,
 			);
@@ -313,7 +313,7 @@
 				F1D011F320746FA600C4927D /* Self+GMSMapViewDelegate.swift in Sources */,
 				F1F7F68C20744FBF00490052 /* NewUserLocationViewController.swift in Sources */,
 				F172224B20728C310084C3EC /* AppDelegate.swift in Sources */,
-				F1D011F020746B1F00C4927D /* Self+GMSAutocompleteViewControllerDelegate.swift in Sources */,
+				F1D011F020746B1F00C4927D /* Self+GMSAutocompleteFetcherDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
