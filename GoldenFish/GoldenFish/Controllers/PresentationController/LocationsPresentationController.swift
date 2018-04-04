@@ -34,6 +34,8 @@ public class RoundView: UIView {
 
 final class LocationsPresentationController: BasePresentationViewController {
     
+    var locations = [UserLocation]()
+    
     override var controllerHeight: CGFloat {
         return 500
     }
@@ -65,7 +67,11 @@ final class LocationsPresentationController: BasePresentationViewController {
     
     lazy var locationsTableView: UITableView = {
         let tableView = UITableView(frame: CGRect(x: 2, y: 2, width: kScreenWidth - 4, height: 500))
+        tableView.register(UINib(nibName: "LocationTableViewCell", bundle: nil), forCellReuseIdentifier: "locationTableViewCell")
         tableView.backgroundColor = Util.hexStringToUIColor(hex: "#F4EEC0")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 94
         return tableView
     }()
     
@@ -77,10 +83,16 @@ final class LocationsPresentationController: BasePresentationViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        config()
+        let location = UserLocation()
+        location.locationName = "This is my company"
+        location.locationAddress = "1600 Amphitheatre Pkwy, Mountain View, CA 94043"
+        location.locationDistance = "0.1mi"
+        locations.append(location)
+        locations.append(location)
+        configurePresentationView()
     }
     
-    private func config() {
+    private func configurePresentationView() {
         view.backgroundColor = UIColor.clear
         view.addSubview(roundView)
         roundView.addSubview(titleLabel)
@@ -95,14 +107,24 @@ final class LocationsPresentationController: BasePresentationViewController {
 }
 
 
-//extension LocationsPresentationController: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 10
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        return tableView.cellForRow(at: indexPath)!
-//    }
-//
-//
-//}
+extension LocationsPresentationController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return locations.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "locationTableViewCell", for: indexPath) as! LocationTableViewCell
+        cell.selectionStyle = .none
+        cell.locationName.text = locations[indexPath.row].locationName
+        cell.locationAddress.text = locations[indexPath.row].locationAddress
+        cell.locationDistance.text = locations[indexPath.row].locationDistance
+        cell.locationImage.image = UIImage(named: "Fish")!
+        return cell
+    }
+
+
+}

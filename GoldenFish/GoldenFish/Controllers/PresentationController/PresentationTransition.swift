@@ -31,8 +31,6 @@ class PresentBottom: UIPresentationController {
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
     }
     
-    
-    
     override func presentationTransitionWillBegin() {
         blurView.alpha = 0
         containerView?.addSubview(blurView)

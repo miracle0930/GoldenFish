@@ -10,12 +10,17 @@ import UIKit
 
 class LocationTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var locationImage: UIImageView!
+    @IBOutlet weak var locationName: UILabel!
     @IBOutlet weak var locationAddress: UILabel!
     @IBOutlet weak var locationDistance: UILabel!
-    
+    @IBOutlet weak var locationImage: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        locationName.backgroundColor = .clear
+        locationAddress.backgroundColor = .clear
+        locationDistance.backgroundColor = .clear
+        self.backgroundColor = .clear
     }
     
     @IBAction func editButtonPressed(_ sender: UIButton) {

@@ -53,7 +53,7 @@ class NewUserLocationViewController: UIViewController {
     func configureInfoView() {
         let x = UIScreen.main.bounds.width - infoButton.frame.origin.x
         infoView = UIView(frame: CGRect(x: x, y: 50, width: 290, height: 70))
-        infoView!.backgroundColor = Util.hexStringToUIColor(hex: "#6DB193")
+        infoView!.backgroundColor = Util.hexStringToUIColor(hex: "#F4EEC0")
         infoView!.alpha = 0
         infoView!.layer.cornerRadius = 10
         infoView!.layer.borderWidth = 1
