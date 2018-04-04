@@ -79,8 +79,9 @@
                                     <constraint firstAttribute="width" constant="180" id="kL1-Af-Jnn"/>
                                 </constraints>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="xQU-em-9uX">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="xQU-em-9uX">
                                 <rect key="frame" x="33" y="115" width="308" height="378"/>
+                                <string key="text">Hi! Welcom to GoldenFish 1.0!  Features:   -- Memo pad.   -- Time alert.   -- Location alert.   -- Arrange your daily life.   -- Shopping list.  First time working with us? Click the purple button to set up your personal account.  </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -328,7 +329,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="246" height="37"/>
                                                 <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="246" id="1vj-dF-TRI"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="246" id="1vj-dF-TRI"/>
                                                     <constraint firstAttribute="height" constant="37" id="HrE-Pk-dbk"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
@@ -344,7 +345,7 @@
                                                 <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="37" id="scc-np-Q5K"/>
-                                                    <constraint firstAttribute="width" constant="246" id="u3A-o4-txc"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="246" id="u3A-o4-txc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                 <state key="normal" title="Manage my locations.">
@@ -357,11 +358,26 @@
                                             <constraint firstAttribute="height" constant="84" id="Pn0-g5-ZYf"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSt-JR-bmP">
+                                        <rect key="frame" x="335" y="48" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="VUF-NW-2dk"/>
+                                            <constraint firstAttribute="height" constant="22" id="fAc-YC-3d0"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="infoButtonPressed:" destination="pVo-Zn-MJa" eventType="touchUpInside" id="enm-Xb-mnz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NcC-fq-5LN" secondAttribute="trailing" constant="20" symbolic="YES" id="EFf-Id-jA4"/>
                                     <constraint firstItem="NcC-fq-5LN" firstAttribute="top" secondItem="tuX-bs-44d" secondAttribute="top" constant="37" id="IVf-RD-gPy"/>
+                                    <constraint firstAttribute="trailing" secondItem="PSt-JR-bmP" secondAttribute="trailing" constant="18" id="WOe-HA-Gah"/>
+                                    <constraint firstItem="PSt-JR-bmP" firstAttribute="top" secondItem="tuX-bs-44d" secondAttribute="top" constant="48" id="fne-de-Xut"/>
                                     <constraint firstItem="NcC-fq-5LN" firstAttribute="leading" secondItem="tuX-bs-44d" secondAttribute="leading" constant="19" id="gWc-C6-7ZB"/>
                                     <constraint firstItem="IUy-rg-XXV" firstAttribute="centerX" secondItem="tuX-bs-44d" secondAttribute="centerX" id="nbP-aZ-beb"/>
                                     <constraint firstAttribute="bottom" secondItem="IUy-rg-XXV" secondAttribute="bottom" constant="13" id="zS7-8g-fdw"/>
@@ -438,6 +454,7 @@
                     </view>
                     <connections>
                         <outlet property="basicView" destination="3dr-sM-79a" id="nC2-7h-Rvb"/>
+                        <outlet property="infoButton" destination="PSt-JR-bmP" id="dHQ-AJ-kEh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBg-oh-XLY" userLabel="First Responder" sceneMemberID="firstResponder"/>

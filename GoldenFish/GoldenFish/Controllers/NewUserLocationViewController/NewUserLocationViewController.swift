@@ -14,13 +14,16 @@ class NewUserLocationViewController: UIViewController {
     
     var mapView: GMSMapView?
     var locationManager = CLLocationManager()
+    var infoView: UIView?
     @IBOutlet var basicView: UIView!
-    @IBOutlet var homeTextField: UITextField!
-    @IBOutlet var workTextField: UITextField!
+    var infoViewShowsUp = false
+    @IBOutlet weak var infoButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMapView()
+        configureInfoView()
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
         if CLLocationManager.locationServicesEnabled() {
@@ -28,17 +31,6 @@ class NewUserLocationViewController: UIViewController {
             locationManager.startUpdatingLocation()
         }
     }
-
-    
-    @IBAction func addNewLocationButtonPressed(_ sender: UIButton) {
-        let autocompleteController = GMSAutocompleteViewController()
-        autocompleteController.delegate = self
-        present(autocompleteController, animated: true, completion: nil)
-    }
-    
-    
- 
-    
     
     func configureMapView() {
         let mapWidth = basicView.frame.width
@@ -58,10 +50,41 @@ class NewUserLocationViewController: UIViewController {
             mapView!.animate(to: camera)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func configureInfoView() {
+        let x = UIScreen.main.bounds.width - infoButton.frame.origin.x
+        infoView = UIView(frame: CGRect(x: x, y: 50, width: 290, height: 70))
+        infoView!.backgroundColor = UIColor.white
+        infoView!.alpha = 0
+        infoView!.layer.cornerRadius = 10
+        infoView!.layer.borderWidth = 1
+        infoView!.layer.masksToBounds = true
+        let infoTextView = UITextView(frame: CGRect(x: 2, y: 2, width: 286, height: 66))
+        infoTextView.font = UIFont(name: "Chalkboard SE", size: 17)
+        infoTextView.text = "Store your personal locations like home, company, supermarkets, etc."
+        infoView!.addSubview(infoTextView)
+    }
+    
+    @IBAction func addNewLocationButtonPressed(_ sender: UIButton) {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        present(autocompleteController, animated: true, completion: nil)
+    }
+    
+    @IBAction func infoButtonPressed(_ sender: UIButton) {
+        if !infoViewShowsUp {
+            view.addSubview(infoView!)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.infoView?.alpha = 1
+            })
+        } else {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.infoView!.alpha = 0
+            }) { (_) in
+                self.infoView!.removeFromSuperview()
+            }
+        }
+        infoViewShowsUp = !infoViewShowsUp
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
