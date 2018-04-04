@@ -321,77 +321,40 @@
                                             <action selector="backButtonPressed:" destination="Cqs-gR-7Nx" eventType="touchUpInside" id="jhU-Z1-HWW"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lrG-tP-qvw">
-                                        <rect key="frame" x="19" y="89" width="337" height="70"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IUy-rg-XXV">
+                                        <rect key="frame" x="64" y="89" width="246" height="84"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="0K9-3o-IQq">
-                                                <rect key="frame" x="0.0" y="0.0" width="337" height="25"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kr-XB-TLq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="37" height="25"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="Zpl-XM-xzH"/>
-                                                            <constraint firstAttribute="height" constant="25" id="iGP-wL-A4t"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEq-LC-JCA">
-                                                        <rect key="frame" x="41" y="0.0" width="267" height="25"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="267" id="e2x-iJ-pDk"/>
-                                                        </constraints>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Up1-vR-xEO">
-                                                        <rect key="frame" x="312" y="0.0" width="25" height="25"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="25" id="6IK-e3-XDr"/>
-                                                            <constraint firstAttribute="height" constant="25" id="kRJ-zW-gv9"/>
-                                                        </constraints>
-                                                        <state key="normal" image="gps"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="3ia-oc-R1F">
-                                                <rect key="frame" x="0.0" y="45" width="337" height="25"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEH-Ug-Mx9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="37" height="25"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="Ihm-X3-dc0"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apv-vb-2QD">
-                                                        <rect key="frame" x="41" y="0.0" width="267" height="25"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="267" id="owN-hG-4zT"/>
-                                                        </constraints>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaO-u2-5sM">
-                                                        <rect key="frame" x="312" y="0.0" width="25" height="25"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="25" id="Jk2-go-0mb"/>
-                                                            <constraint firstAttribute="height" constant="25" id="fav-6y-5iw"/>
-                                                        </constraints>
-                                                        <state key="normal" image="gps"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdD-Er-5oU">
+                                                <rect key="frame" x="0.0" y="0.0" width="246" height="37"/>
+                                                <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="246" id="1vj-dF-TRI"/>
+                                                    <constraint firstAttribute="height" constant="37" id="HrE-Pk-dbk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                <state key="normal" title="Add new location.">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addNewLocationButtonPressed:" destination="pVo-Zn-MJa" eventType="touchUpInside" id="5Mk-qN-N7t"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCC-l2-XcC">
+                                                <rect key="frame" x="0.0" y="47" width="246" height="37"/>
+                                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="scc-np-Q5K"/>
+                                                    <constraint firstAttribute="width" constant="246" id="u3A-o4-txc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                <state key="normal" title="Manage my locations.">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="337" id="cXw-3g-9zv"/>
-                                            <constraint firstAttribute="width" constant="337" id="gZD-ZA-uVx"/>
-                                            <constraint firstAttribute="height" constant="70" id="xsj-ea-ccd"/>
+                                            <constraint firstAttribute="width" constant="246" id="BF7-Uy-Yez"/>
+                                            <constraint firstAttribute="height" constant="84" id="Pn0-g5-ZYf"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -399,9 +362,9 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NcC-fq-5LN" secondAttribute="trailing" constant="20" symbolic="YES" id="EFf-Id-jA4"/>
                                     <constraint firstItem="NcC-fq-5LN" firstAttribute="top" secondItem="tuX-bs-44d" secondAttribute="top" constant="37" id="IVf-RD-gPy"/>
-                                    <constraint firstItem="lrG-tP-qvw" firstAttribute="centerX" secondItem="tuX-bs-44d" secondAttribute="centerX" id="K6m-io-dr5"/>
-                                    <constraint firstAttribute="bottom" secondItem="lrG-tP-qvw" secondAttribute="bottom" constant="27" id="L5K-I7-3SF"/>
                                     <constraint firstItem="NcC-fq-5LN" firstAttribute="leading" secondItem="tuX-bs-44d" secondAttribute="leading" constant="19" id="gWc-C6-7ZB"/>
+                                    <constraint firstItem="IUy-rg-XXV" firstAttribute="centerX" secondItem="tuX-bs-44d" secondAttribute="centerX" id="nbP-aZ-beb"/>
+                                    <constraint firstAttribute="bottom" secondItem="IUy-rg-XXV" secondAttribute="bottom" constant="13" id="zS7-8g-fdw"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrP-4T-m8b" userLabel="Bottom View">
@@ -502,6 +465,5 @@
     </scenes>
     <resources>
         <image name="Fish" width="256" height="256"/>
-        <image name="gps" width="32" height="32"/>
     </resources>
 </document>

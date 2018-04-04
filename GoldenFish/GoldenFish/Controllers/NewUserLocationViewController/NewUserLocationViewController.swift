@@ -8,12 +8,15 @@
 
 import UIKit
 import GoogleMaps
+import GooglePlaces
 
 class NewUserLocationViewController: UIViewController {
     
     var mapView: GMSMapView?
     var locationManager = CLLocationManager()
     @IBOutlet var basicView: UIView!
+    @IBOutlet var homeTextField: UITextField!
+    @IBOutlet var workTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,17 @@ class NewUserLocationViewController: UIViewController {
             locationManager.startUpdatingLocation()
         }
     }
+
+    
+    @IBAction func addNewLocationButtonPressed(_ sender: UIButton) {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        present(autocompleteController, animated: true, completion: nil)
+    }
+    
+    
+ 
+    
     
     func configureMapView() {
         let mapWidth = basicView.frame.width
