@@ -11,9 +11,6 @@ import GooglePlaces
 
 extension NewUserLocationViewController: GMSAutocompleteViewControllerDelegate {
     
-    
-    
-    
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         
     }
