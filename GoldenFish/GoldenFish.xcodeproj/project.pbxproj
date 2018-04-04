@@ -12,8 +12,9 @@
 		F172225020728C320084C3EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F172224E20728C320084C3EC /* Main.storyboard */; };
 		F172225220728C350084C3EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F172225120728C350084C3EC /* Assets.xcassets */; };
 		F172225520728C350084C3EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F172225320728C350084C3EC /* LaunchScreen.storyboard */; };
-		F1AF783A2073DF8E0055E297 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF78392073DF8E0055E297 /* MainViewController.swift */; };
+		F1AF783A2073DF8E0055E297 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF78392073DF8E0055E297 /* NewUserViewController.swift */; };
 		F1AF783C20740C1B0055E297 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF783B20740C1B0055E297 /* Util.swift */; };
+		F1AF783E207422490055E297 /* NewUserSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF783D207422490055E297 /* NewUserSignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +26,9 @@
 		F172225120728C350084C3EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F172225420728C350084C3EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F172225620728C350084C3EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1AF78392073DF8E0055E297 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F1AF78392073DF8E0055E297 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		F1AF783B20740C1B0055E297 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		F1AF783D207422490055E297 /* NewUserSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserSignUpViewController.swift; sourceTree = "<group>"; };
 		F4207AB2B72A54FB2125115B /* Pods-GoldenFish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldenFish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoldenFish/Pods-GoldenFish.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,7 +114,8 @@
 		F1AF78312073D5F20055E297 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F1AF78392073DF8E0055E297 /* MainViewController.swift */,
+				F1AF78392073DF8E0055E297 /* NewUserViewController.swift */,
+				F1AF783D207422490055E297 /* NewUserSignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -279,8 +282,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1AF783A2073DF8E0055E297 /* MainViewController.swift in Sources */,
+				F1AF783A2073DF8E0055E297 /* NewUserViewController.swift in Sources */,
 				F1AF783C20740C1B0055E297 /* Util.swift in Sources */,
+				F1AF783E207422490055E297 /* NewUserSignUpViewController.swift in Sources */,
 				F172224B20728C310084C3EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
