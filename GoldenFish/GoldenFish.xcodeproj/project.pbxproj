@@ -22,6 +22,9 @@
 		F1E25C4620754325009CC50E /* LocationsPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E25C4520754325009CC50E /* LocationsPresentationController.swift */; };
 		F1E25C482075484B009CC50E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E25C472075484B009CC50E /* UIViewControllerExtension.swift */; };
 		F1E25C4A20755D3B009CC50E /* BasePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E25C4920755D3B009CC50E /* BasePresentationController.swift */; };
+		F1E25C4D20756C0D009CC50E /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E25C4B20756C0D009CC50E /* LocationTableViewCell.swift */; };
+		F1E25C4E20756C0D009CC50E /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E25C4C20756C0D009CC50E /* LocationTableViewCell.xib */; };
+		F1E25C5020757012009CC50E /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E25C4F20757012009CC50E /* UserLocation.swift */; };
 		F1F7F68C20744FBF00490052 /* NewUserLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7F68B20744FBF00490052 /* NewUserLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,9 @@
 		F1E25C4520754325009CC50E /* LocationsPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsPresentationController.swift; sourceTree = "<group>"; };
 		F1E25C472075484B009CC50E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		F1E25C4920755D3B009CC50E /* BasePresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresentationController.swift; sourceTree = "<group>"; };
+		F1E25C4B20756C0D009CC50E /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		F1E25C4C20756C0D009CC50E /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
+		F1E25C4F20757012009CC50E /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		F1F7F68B20744FBF00490052 /* NewUserLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserLocationViewController.swift; sourceTree = "<group>"; };
 		F4207AB2B72A54FB2125115B /* Pods-GoldenFish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldenFish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoldenFish/Pods-GoldenFish.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +119,7 @@
 		F1AF782F2073D5E30055E297 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F1E25C4F20757012009CC50E /* UserLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +172,8 @@
 		F1AF78352073D62F0055E297 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F1E25C4B20756C0D009CC50E /* LocationTableViewCell.swift */,
+				F1E25C4C20756C0D009CC50E /* LocationTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -253,6 +262,7 @@
 			files = (
 				F172225520728C350084C3EC /* LaunchScreen.storyboard in Resources */,
 				F172225220728C350084C3EC /* Assets.xcassets in Resources */,
+				F1E25C4E20756C0D009CC50E /* LocationTableViewCell.xib in Resources */,
 				F172225020728C320084C3EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +341,7 @@
 				F1D011F520746FF500C4927D /* Self+CLLocationManagerDelegate.swift in Sources */,
 				F1AF783E207422490055E297 /* NewUserSignUpViewController.swift in Sources */,
 				F1E25C4A20755D3B009CC50E /* BasePresentationController.swift in Sources */,
+				F1E25C4D20756C0D009CC50E /* LocationTableViewCell.swift in Sources */,
 				F1E25C4420753368009CC50E /* PresentationTransition.swift in Sources */,
 				F1D011F320746FA600C4927D /* Self+GMSMapViewDelegate.swift in Sources */,
 				F1E25C4620754325009CC50E /* LocationsPresentationController.swift in Sources */,
@@ -338,6 +349,7 @@
 				F172224B20728C310084C3EC /* AppDelegate.swift in Sources */,
 				F1E25C482075484B009CC50E /* UIViewControllerExtension.swift in Sources */,
 				F1D011F020746B1F00C4927D /* Self+GMSAutocompleteViewControllerDelegate.swift in Sources */,
+				F1E25C5020757012009CC50E /* UserLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
