@@ -18,6 +18,12 @@ class NewUserLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMapView()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.startUpdatingLocation()
+        }
     }
     
     func configureMapView() {
@@ -49,7 +55,3 @@ class NewUserLocationViewController: UIViewController {
     }
 }
 
-
-extension NewUserLocationViewController: GMSMapViewDelegate {
-    
-}
