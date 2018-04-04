@@ -15,6 +15,7 @@
 		F1AF783A2073DF8E0055E297 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF78392073DF8E0055E297 /* NewUserViewController.swift */; };
 		F1AF783C20740C1B0055E297 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF783B20740C1B0055E297 /* Util.swift */; };
 		F1AF783E207422490055E297 /* NewUserSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AF783D207422490055E297 /* NewUserSignUpViewController.swift */; };
+		F1F7F68C20744FBF00490052 /* NewUserLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7F68B20744FBF00490052 /* NewUserLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		F1AF78392073DF8E0055E297 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		F1AF783B20740C1B0055E297 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		F1AF783D207422490055E297 /* NewUserSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserSignUpViewController.swift; sourceTree = "<group>"; };
+		F1F7F68B20744FBF00490052 /* NewUserLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserLocationViewController.swift; sourceTree = "<group>"; };
 		F4207AB2B72A54FB2125115B /* Pods-GoldenFish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldenFish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoldenFish/Pods-GoldenFish.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 			children = (
 				F1AF78392073DF8E0055E297 /* NewUserViewController.swift */,
 				F1AF783D207422490055E297 /* NewUserSignUpViewController.swift */,
+				F1F7F68B20744FBF00490052 /* NewUserLocationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -266,9 +269,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoldenFish/Pods-GoldenFish-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -285,6 +292,7 @@
 				F1AF783A2073DF8E0055E297 /* NewUserViewController.swift in Sources */,
 				F1AF783C20740C1B0055E297 /* Util.swift in Sources */,
 				F1AF783E207422490055E297 /* NewUserSignUpViewController.swift in Sources */,
+				F1F7F68C20744FBF00490052 /* NewUserLocationViewController.swift in Sources */,
 				F172224B20728C310084C3EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
