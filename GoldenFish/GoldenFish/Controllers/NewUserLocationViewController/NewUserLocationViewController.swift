@@ -15,10 +15,9 @@ class NewUserLocationViewController: UIViewController {
     var mapView: GMSMapView?
     var locationManager = CLLocationManager()
     var infoView: UIView?
-    @IBOutlet var basicView: UIView!
+    @IBOutlet weak var basicView: UIView!
     var infoViewShowsUp = false
     @IBOutlet weak var infoButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,13 +53,14 @@ class NewUserLocationViewController: UIViewController {
     func configureInfoView() {
         let x = UIScreen.main.bounds.width - infoButton.frame.origin.x
         infoView = UIView(frame: CGRect(x: x, y: 50, width: 290, height: 70))
-        infoView!.backgroundColor = UIColor.white
+        infoView!.backgroundColor = Util.hexStringToUIColor(hex: "#6DB193")
         infoView!.alpha = 0
         infoView!.layer.cornerRadius = 10
         infoView!.layer.borderWidth = 1
         infoView!.layer.masksToBounds = true
         let infoTextView = UITextView(frame: CGRect(x: 2, y: 2, width: 286, height: 66))
         infoTextView.font = UIFont(name: "Chalkboard SE", size: 17)
+        infoTextView.backgroundColor = UIColor.clear
         infoTextView.text = "Store your personal locations like home, company, supermarkets, etc."
         infoView!.addSubview(infoTextView)
     }
@@ -71,14 +71,19 @@ class NewUserLocationViewController: UIViewController {
         present(autocompleteController, animated: true, completion: nil)
     }
     
+    @IBAction func manageLocationsButtonPressed(_ sender: UIButton) {
+        presentBottom(LocationsPresentationController.self)
+    }
+    
+    
     @IBAction func infoButtonPressed(_ sender: UIButton) {
         if !infoViewShowsUp {
             view.addSubview(infoView!)
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.infoView?.alpha = 1
             })
         } else {
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.infoView!.alpha = 0
             }) { (_) in
                 self.infoView!.removeFromSuperview()
