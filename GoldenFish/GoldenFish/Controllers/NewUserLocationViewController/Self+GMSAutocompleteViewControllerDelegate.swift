@@ -18,12 +18,10 @@ extension NewUserLocationViewController: GMSAutocompleteViewControllerDelegate {
         print("Error: ", error.localizedDescription)
     }
     
-    // User canceled the operation.
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         dismiss(animated: true, completion: nil)
     }
     
-    // Turn the network activity indicator on and off again.
     func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
@@ -32,10 +30,17 @@ extension NewUserLocationViewController: GMSAutocompleteViewControllerDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
-    
-    
-    
-    
-   
+    func viewController(_ viewController: GMSAutocompleteViewController, didSelect prediction: GMSAutocompletePrediction) -> Bool {
+        
+        GMSPlacesClient.shared().lookUpPlaceID(prediction.placeID!) { (place, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                
+            }
+        }
+
+        return true
+    }
     
 }

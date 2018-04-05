@@ -1,5 +1,5 @@
 //
-//  BasePresentationController.swift
+//  LocationsPresentationController.swift
 //  GoldenFish
 //
 //  Created by 管 皓 on 2018/4/4.
@@ -7,29 +7,6 @@
 //
 
 import UIKit
-
-let kScreenWidth = UIScreen.main.bounds.width
-let kScreenHeight = UIScreen.main.bounds.height
-
-public class RoundView: UIView {
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = UIColor.clear
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    public override func draw(_ rect: CGRect) {
-        let color = Util.hexStringToUIColor(hex: "F4EEC0")
-        color.set()
-        let path = UIBezierPath(ovalIn: rect)
-        path.fill()
-    }
-    
-}
 
 
 final class LocationsPresentationController: BasePresentationViewController {
@@ -40,7 +17,7 @@ final class LocationsPresentationController: BasePresentationViewController {
         return 500
     }
     
-    lazy var sureButton:UIButton = {
+    lazy var sureButton: UIButton = {
         let button = UIButton(frame: CGRect(x: kScreenWidth - 60, y: 0, width: 40, height: 40))
         button.setImage(UIImage(named: "hide"), for: .normal)
         button.backgroundColor = Util.hexStringToUIColor(hex: "#F4EEC0")
@@ -81,7 +58,7 @@ final class LocationsPresentationController: BasePresentationViewController {
         return roundView
     }()
     
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         let location = UserLocation()
         location.locationName = "This is my company"
@@ -125,6 +102,5 @@ extension LocationsPresentationController: UITableViewDelegate, UITableViewDataS
         cell.locationImage.image = UIImage(named: "Fish")!
         return cell
     }
-
 
 }

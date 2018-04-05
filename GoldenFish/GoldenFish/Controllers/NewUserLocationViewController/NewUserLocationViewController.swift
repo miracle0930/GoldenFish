@@ -72,7 +72,8 @@ class NewUserLocationViewController: UIViewController {
     }
     
     @IBAction func manageLocationsButtonPressed(_ sender: UIButton) {
-        presentBottom(LocationsPresentationController.self)
+//        presentBottom(LocationsPresentationController.self)
+        presentBottom(AddLocationPresentationController.self)
     }
     
     

@@ -19,7 +19,7 @@ extension UIViewController: UIViewControllerTransitioningDelegate {
     }
     
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let present = PresentBottom(presentedViewController: presented, presenting: presenting)
+        let present = BottomPresentationController(presentedViewController: presented, presenting: presenting)
         return present
     }
     
