@@ -13,16 +13,19 @@ import GooglePlaces
 class NewUserLocationViewController: UIViewController {
     
     var mapView: GMSMapView?
-    var locationManager = CLLocationManager()
     var infoView: UIView?
+    var locationManager = CLLocationManager()
     @IBOutlet weak var basicView: UIView!
     var infoViewShowsUp = false
     @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var hiddenView: UIView!
+    @IBOutlet weak var hiddenViewHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMapView()
         configureInfoView()
+        configureHiddenView()
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
         if CLLocationManager.locationServicesEnabled() {
@@ -72,8 +75,7 @@ class NewUserLocationViewController: UIViewController {
     }
     
     @IBAction func manageLocationsButtonPressed(_ sender: UIButton) {
-//        presentBottom(LocationsPresentationController.self)
-        presentBottom(AddLocationPresentationController.self)
+        presentBottom(LocationsPresentationController.self)
     }
     
     
@@ -91,6 +93,12 @@ class NewUserLocationViewController: UIViewController {
             }
         }
         infoViewShowsUp = !infoViewShowsUp
+        
+        UIView.animate(withDuration: 0.5) {
+            self.hiddenViewHeightConstraint.constant = 160
+            self.view.layoutIfNeeded()
+        }
+        
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {

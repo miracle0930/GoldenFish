@@ -1,5 +1,5 @@
 //
-//  BottomPresentationController.swift
+//  BottomPresentation.swift
 //  GoldenFish
 //
 //  Created by 管 皓 on 2018/4/4.
@@ -8,9 +8,8 @@
 
 import UIKit
 
+class BottomPresentation: UIPresentationController {
 
-class BottomPresentationController: UIPresentationController {
-    
     var controllerHeight: CGFloat
     
     lazy var blurView: UIView = {
@@ -18,15 +17,15 @@ class BottomPresentationController: UIPresentationController {
         if let frame = self.containerView?.bounds {
             view.frame = frame
         }
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         return view
     }()
     
     override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         if case let vc as BasePresentationViewController = presentedViewController {
-            controllerHeight = vc.controllerHeight ?? UIScreen.main.bounds.height
+            controllerHeight = vc.controllerHeight ?? kScreenHeight
         } else {
-            controllerHeight = UIScreen.main.bounds.height
+            controllerHeight = kScreenHeight
         }
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
     }
@@ -52,7 +51,7 @@ class BottomPresentationController: UIPresentationController {
     }
     
     override var frameOfPresentedViewInContainerView: CGRect {
-        return CGRect(x: 0, y: UIScreen.main.bounds.height - controllerHeight, width: UIScreen.main.bounds.width, height: controllerHeight)
+        return CGRect(x: 0, y: kScreenHeight - controllerHeight, width: kScreenWidth, height: controllerHeight)
     }
-
 }
+

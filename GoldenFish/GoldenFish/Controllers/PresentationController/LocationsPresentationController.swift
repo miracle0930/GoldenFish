@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 final class LocationsPresentationController: BasePresentationViewController {
     
     var locations = [UserLocation]()

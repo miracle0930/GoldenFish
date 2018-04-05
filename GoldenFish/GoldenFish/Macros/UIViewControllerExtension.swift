@@ -16,10 +16,11 @@ extension UIViewController: UIViewControllerTransitioningDelegate {
         controller.modalPresentationStyle = .custom
         controller.transitioningDelegate = self
         self.present(controller, animated: true, completion: nil)
+    
     }
     
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let present = BottomPresentationController(presentedViewController: presented, presenting: presenting)
+        let present = BottomPresentation(presentedViewController: presented, presenting: presenting)
         return present
     }
     
