@@ -5,5 +5,5 @@ Memo pad to arrange your daily life.
 #### Basic UI Animation
 <p align="center"><img src ="https://github.com/miracle0930/GoldenFish/blob/master/Screenshots/demo.gif" /></p>
 #### Location View Animation
-<p align = "center"><>img src = "https://github.com/miracle0930/GoldenFish/blob/master/Screenshots/locationdemo.gif" /></p>
+<p align = "center"><img src = "https://github.com/miracle0930/GoldenFish/blob/master/Screenshots/locationdemo.gif" /></p>
 
