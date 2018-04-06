@@ -13,6 +13,7 @@ import GooglePlaces
 
 class NewUserLocationViewController: UIViewController {
     
+    var keyboardHeight: CGFloat?
     var mapView: GMSMapView?
     var infoView: UIView?
     var locationManager = CLLocationManager()
@@ -21,6 +22,9 @@ class NewUserLocationViewController: UIViewController {
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var hiddenView: UIView!
     @IBOutlet weak var hiddenViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomButtonsView: UIStackView!
+    @IBOutlet weak var bottomView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +33,9 @@ class NewUserLocationViewController: UIViewController {
         configureHiddenView()
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
-        NotificationCenter.default.addObserver(self, selector: #selector(hiddenViewShowsUp), name: NSNotification.Name(rawValue: "hiddenViewShowsUp"), object: nil)
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(hideHiddenView))
+        swipeDown.direction = .down
+        bottomView.addGestureRecognizer(swipeDown)
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.startUpdatingLocation()
@@ -123,5 +129,17 @@ class NewUserLocationViewController: UIViewController {
             self.view.layoutIfNeeded()
         })
     }
+    
+    @objc func hideHiddenView(gesture: UISwipeGestureRecognizer) {
+        print("here")
+        if case UISwipeGestureRecognizerDirection.down = gesture.direction {
+            UIView.animate(withDuration: 0.3) {
+                self.hiddenViewHeightConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    
 }
 

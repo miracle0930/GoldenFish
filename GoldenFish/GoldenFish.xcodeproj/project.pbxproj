@@ -189,10 +189,10 @@
 			isa = PBXGroup;
 			children = (
 				F1F7F68B20744FBF00490052 /* NewUserLocationViewController.swift */,
+				F1E25C752076D1EE009CC50E /* Self+ConfigureHiddenView.swift */,
 				F1D011EF20746B1F00C4927D /* Self+GMSAutocompleteViewControllerDelegate.swift */,
 				F1D011F220746FA600C4927D /* Self+GMSMapViewDelegate.swift */,
 				F1D011F420746FF500C4927D /* Self+CLLocationManagerDelegate.swift */,
-				F1E25C752076D1EE009CC50E /* Self+ConfigureHiddenView.swift */,
 			);
 			path = NewUserLocationViewController;
 			sourceTree = "<group>";

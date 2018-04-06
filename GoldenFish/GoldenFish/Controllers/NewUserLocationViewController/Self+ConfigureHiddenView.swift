@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreLocation
 
-extension NewUserLocationViewController {
+extension NewUserLocationViewController: UITextFieldDelegate {
     
     struct HiddenViewStruct {
         
@@ -23,7 +23,6 @@ extension NewUserLocationViewController {
         }()
         
         lazy var distanceLabel: UILabel = {
-            
             let label = UILabel(frame: CGRect(x: 97, y: 87, width: 100, height: 30))
             label.font = UIFont(name: "Chalkboard SE", size: 15)
             return label
@@ -63,12 +62,41 @@ extension NewUserLocationViewController {
     func configureHiddenView() {
         hiddenView?.backgroundColor = Util.hexStringToUIColor(hex: "#F4EEC0")
         var hiddenViewStruct = HiddenViewStruct()
+        hiddenViewStruct.nameTextField.delegate = self
         hiddenView!.addSubview(hiddenViewStruct.addressLabel)
         hiddenView!.addSubview(hiddenViewStruct.photoImageView)
         hiddenView!.addSubview(hiddenViewStruct.nameTextField)
         hiddenView!.addSubview(hiddenViewStruct.distanceLabel)
         hiddenView!.addSubview(hiddenViewStruct.confirmButton)
         hiddenView!.addSubview(hiddenViewStruct.discardButton)
+        let hideKeyboardTapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        hiddenView.addGestureRecognizer(hideKeyboardTapGesture)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(hiddenViewShowsUp), name: NSNotification.Name(rawValue: "hiddenViewShowsUp"), object: nil)
+
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        self.view.frame.origin.y = 0
+        let keyboardSize = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.size
+        keyboardHeight = keyboardSize.height
+        bottomViewHeightConstraint.constant -= 97
+        self.view.frame.origin.y -= keyboardHeight!
+        view.layoutIfNeeded()
+        bottomButtonsView.isHidden = true
+
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y += keyboardHeight!
+        bottomViewHeightConstraint.constant += 97
+        view.layoutIfNeeded()
+        bottomButtonsView.isHidden = false
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     

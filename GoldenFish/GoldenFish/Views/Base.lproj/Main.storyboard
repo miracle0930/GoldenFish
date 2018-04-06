@@ -385,7 +385,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dr-sM-79a">
-                                <rect key="frame" x="0.0" y="186" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="186" width="375" height="384"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrP-4T-m8b" userLabel="Bottom View">
@@ -453,13 +453,16 @@
                             <constraint firstItem="fGo-gL-vEi" firstAttribute="top" secondItem="xrP-4T-m8b" secondAttribute="bottom" id="jc6-hn-nar"/>
                             <constraint firstItem="tuX-bs-44d" firstAttribute="trailing" secondItem="7fG-kg-T3P" secondAttribute="trailing" id="k8O-3S-OzK"/>
                             <constraint firstItem="3dr-sM-79a" firstAttribute="leading" secondItem="7fG-kg-T3P" secondAttribute="leading" id="s6x-ae-uSM"/>
-                            <constraint firstItem="xrP-4T-m8b" firstAttribute="top" secondItem="3dr-sM-79a" secondAttribute="bottom" constant="9" id="yJF-kd-X1j"/>
+                            <constraint firstItem="xrP-4T-m8b" firstAttribute="top" secondItem="3dr-sM-79a" secondAttribute="bottom" id="yJF-kd-X1j"/>
                             <constraint firstItem="fGo-gL-vEi" firstAttribute="leading" secondItem="7fG-kg-T3P" secondAttribute="leading" id="zDw-vG-fxc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7fG-kg-T3P"/>
                     </view>
                     <connections>
                         <outlet property="basicView" destination="3dr-sM-79a" id="nC2-7h-Rvb"/>
+                        <outlet property="bottomButtonsView" destination="AhD-5S-dbd" id="r5Z-la-n2E"/>
+                        <outlet property="bottomView" destination="xrP-4T-m8b" id="FrR-oX-Vf2"/>
+                        <outlet property="bottomViewHeightConstraint" destination="u0g-YV-JY7" id="Vrw-i5-HTw"/>
                         <outlet property="hiddenView" destination="fGo-gL-vEi" id="FRN-rp-6Rm"/>
                         <outlet property="hiddenViewHeightConstraint" destination="SfS-mJ-XUA" id="QqX-jh-Xlv"/>
                         <outlet property="infoButton" destination="PSt-JR-bmP" id="dHQ-AJ-kEh"/>
