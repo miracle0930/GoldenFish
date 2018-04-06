@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
+
 class NewUserLocationViewController: UIViewController {
     
     var mapView: GMSMapView?
@@ -28,6 +29,7 @@ class NewUserLocationViewController: UIViewController {
         configureHiddenView()
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
+        NotificationCenter.default.addObserver(self, selector: #selector(hiddenViewShowsUp), name: NSNotification.Name(rawValue: "hiddenViewShowsUp"), object: nil)
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.startUpdatingLocation()
@@ -93,16 +95,33 @@ class NewUserLocationViewController: UIViewController {
             }
         }
         infoViewShowsUp = !infoViewShowsUp
-        
-        UIView.animate(withDuration: 0.5) {
-            self.hiddenViewHeightConstraint.constant = 160
-            self.view.layoutIfNeeded()
-        }
-        
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func hiddenViewShowsUp(_ notification: NSNotification) {
+        let address = notification.userInfo?["address"] as! String
+        let latitude = notification.userInfo?["latitude"] as! Double
+        let longitude = notification.userInfo?["longitude"] as! Double
+        let addressLabel = hiddenView!.subviews[0] as! UILabel
+        addressLabel.text = address
+        let from = locationManager.location!
+        let to = CLLocation(latitude: latitude, longitude: longitude)
+        let distance = round(to.distance(from: from) * 0.000627 * 100) / 100
+        let distanceLabel = hiddenView!.subviews[3] as! UILabel
+        distanceLabel.text = "\(distance) mi"
+        mapView!.clear()
+        let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 15)
+        mapView!.animate(to: camera)
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2DMake(latitude, longitude)
+        marker.map = mapView
+        UIView.animate(withDuration: 0.5, animations: {
+            self.hiddenViewHeightConstraint.constant = 160
+            self.view.layoutIfNeeded()
+        })
     }
 }
 

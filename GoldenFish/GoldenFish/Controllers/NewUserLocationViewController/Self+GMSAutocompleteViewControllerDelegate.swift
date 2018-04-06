@@ -36,7 +36,12 @@ extension NewUserLocationViewController: GMSAutocompleteViewControllerDelegate {
             if let error = error {
                 print(error.localizedDescription)
             } else {
-                
+                let locationInfo: [String: Any] = [
+                    "address": place!.formattedAddress!,
+                    "latitude": place!.coordinate.latitude,
+                    "longitude": place!.coordinate.longitude
+                ]
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "hiddenViewShowsUp"), object: nil, userInfo: locationInfo)
             }
         }
 
